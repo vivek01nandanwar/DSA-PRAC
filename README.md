@@ -1,1 +1,1 @@
- <h3>DSA mini projects are available in project branch</h3>
+ <h3>DSA mini projects are available in projects branch</h3>
