@@ -42,3 +42,60 @@ print("top element is: ",s1.peek())
 print("pop element is",s1.pop())
 print("top element is: ",s1.peek())
 print(s1.print_stack())
+
+'''class Stack:
+    def __init__(self, capacity):
+        self.capacity = capacity  
+        self.stack = [None] * capacity  # Initialize the stack with None values
+        self.top = -1  # Top of the stack (empty stack means top is -1)
+    
+    def is_empty(self):
+        return self.top == -1 
+    
+    def is_full(self):
+        return self.top == self.capacity - 1  
+    def push(self, item):
+        if self.is_full():
+            raise OverflowError("Stack Overflow")
+        self.top += 1  # Move the top pointer
+        self.stack[self.top] = item  
+    
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("Stack Underflow")  
+        item = self.stack[self.top]  
+        self.top -= 1  # Move the top pointer down
+        return item  # Return the popped item
+    
+    def peek(self):
+        if self.is_empty():
+            raise IndexError("Stack is empty")  
+        return self.stack[self.top]  # Return the item at the top of the stack
+    
+    def size(self):
+        return self.top + 1 
+
+    def print_stack(self):
+        if self.is_empty():
+            print("Stack is empty")
+        else:
+            print("Stack elements from top to bottom:")
+            for i in range(self.top, -1, -1):  
+                print(self.stack[i])
+
+# Example usage
+stack = Stack(5)  # Create a stack of size 5
+stack.push(10)
+stack.push(20)
+stack.push(30)
+stack.push(40)
+stack.push(50)
+
+print("Stack elements:")
+stack.print_stack()
+
+print("Top element:", stack.peek())  # Should print 50
+print("Popped element:", stack.pop())  # Should print 50
+
+stack.print_stack()  # Should print the stack after popping an element
+'''
