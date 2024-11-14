@@ -37,19 +37,21 @@ def MatchingOp_close(exp):
     parenthesisPair={'(':')','[':']','{':'}'}
     for expression in exp:
         if expression in '([{':
-            stack.push()
+            stack.push(expression)
         elif expression in '}])':
-            if stack.is_empty or stack.pop()!=parenthesisPair[expression]:
+            if stack.is_empty() or parenthesisPair[stack.pop()]!=expression:
                 return False
     return stack.is_empty()
     
-expression_1 = "{[()()]}"
-expression_2 = "{[(])}"
+expression_1 = "[{()}]"
+expression_2 = "{[(])}" 
 expression_3 = "({[({})]})"
 expression_4 = "((())"
+expression_5="}[()]"
 
 print(f"Expression: {expression_1} is balanced: {MatchingOp_close(expression_1)}")
 print(f"Expression: {expression_2} is balanced: {MatchingOp_close(expression_2)}")
 print(f"Expression: {expression_3} is balanced: {MatchingOp_close(expression_3)}")
 print(f"Expression: {expression_4} is balanced: {MatchingOp_close(expression_4)}")
+print(f"Expression: {expression_5} is balanced: {MatchingOp_close(expression_5)}")
 
